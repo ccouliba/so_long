@@ -6,7 +6,7 @@
 /*   By: ccouliba <ccouliba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 15:31:00 by ccouliba          #+#    #+#             */
-/*   Updated: 2021/12/13 14:03:59 by ccouliba         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:01:31 by ccouliba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int	file_is_ber_ext(char *file_name)
 		ext = &(file_name[dot]);
 		if (*ext && *file_name != '.' && ft_strcmp(ext, BER_EXT) == 0)
 			return (EXIT_SUCCESS);
+		else if (*file_name == '.')
+		{
+			print_error(PARSING_ERROR, FILE_ERROR_2, 2, BOLD_RED);
+			return (EXIT_FAILURE);
+		}
 		else
 		{
 			print_error(PARSING_ERROR, FILE_ERROR, 2, BOLD_RED);
@@ -72,7 +77,7 @@ char	**read_and_split_file(char *file_name, char **map)
 
 	fd = open(file_name, O_RDONLY);
 	res = read(fd, buffer, BUFFER_SIZE);
-	msg = "-> Make sure the file exists or is not hidden.";
+	msg = "-> Make sure the file exists or is not empty.";
 	if (res == -1 || res == 0)
 	{
 		close(fd);

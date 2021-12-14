@@ -6,7 +6,7 @@
 /*   By: ccouliba <ccouliba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:53:10 by ccouliba          #+#    #+#             */
-/*   Updated: 2021/12/13 17:46:15 by ccouliba         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:06:08 by ccouliba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@
 /*
 ** Dfine all xpm path files to load
 */
-# define WALL_PATH "./sprites/wall.xpm"
+# define WALL_PATH "./prites/wall.xpm"
 # define PLAYER_PATH "./sprites/player.xpm"
 # define ITEM_PATH "./sprites/item.xpm"
 # define EXIT_PATH "./sprites/exit.xpm"
