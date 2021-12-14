@@ -6,7 +6,7 @@
 /*   By: ccouliba <ccouliba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 14:15:24 by ccouliba          #+#    #+#             */
-/*   Updated: 2021/12/13 18:40:31 by ccouliba         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:45:36 by ccouliba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "struct.h"
 # include "define.h"
 # include "so_long_color.h"
-# include "mlx.h"
+# include "../mlx_linux/mlx.h"
 
 /*
 ** lib functions

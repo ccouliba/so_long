@@ -6,7 +6,7 @@
 #    By: ccouliba <ccouliba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/26 02:06:32 by ccouliba          #+#    #+#              #
-#    Updated: 2021/12/14 18:03:49 by ccouliba         ###   ########.fr        #
+#    Updated: 2021/12/14 19:42:20 by ccouliba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,13 +51,20 @@ ifdef true
 CFLAGS += -fsanitize=address
 endif
 
-PATH_MLX	= ./mlx_linux
+PATH_MLX	= ./mlx_linux/
+
+LIBMLX	=	libmlx.a
+
+LIBMLX	:=	$(addprefix $(PATH_MLX), $(LIBMLX))
 
 OBJS		= ${SRCS:.c=.o}
 
 all:	${NAME}
 
-${NAME}: ${OBJS}
+mlx_linux/libmlx.a:
+			$(MAKE) -C $(PATH_MLX)
+			
+${NAME}: ${OBJS} ${LIBMLX}
 	make -C $(PATH_MLX) all
 	${CC} ${CFLAGS} ${OBJS} ${LINUX} -o ${NAME}
 	@echo "[$(_CYAN)Creating objects$(_END) : $(_GREEN)done$(_END)]"
